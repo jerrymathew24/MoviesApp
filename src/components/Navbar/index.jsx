@@ -54,7 +54,7 @@ export default function Navbar() {
   // Function to handle search input changes
   const onSearchChange = (event) => {
     dispatch(setSearchValue(event.target.value));
-  };
+  }
   console.log(searchValue, "searchValueee");
 
   return (
@@ -80,7 +80,6 @@ export default function Navbar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <SelectorComponent />
             <SelectorComponent />
           </Box>
         </Toolbar>
