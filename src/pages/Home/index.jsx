@@ -7,6 +7,7 @@ import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import { getMoviesBySearch } from "../../utils/getMoviesBySearch.js";
 import { getMoviesByGenre } from "../../utils/getMoviesByGenre.js";
+import Footer from "../../components/Footer";
 
 function Home() {
   const dispatch = useDispatch();
@@ -38,6 +39,7 @@ function Home() {
             ))}
         </Grid>
       </Box>
+      <Footer />
     </>
   );
 }
