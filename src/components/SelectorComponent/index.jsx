@@ -19,13 +19,48 @@ export default function SelectorComponent() {
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
-        <InputLabel id="genre-select-label">Genre</InputLabel>
+        <InputLabel 
+          id="genre-select-label" 
+          sx={{ color: "white" }}
+        >
+          Genre
+        </InputLabel>
         <Select
           labelId="genre-select-label"
           id="genre-select"
           value={selectedGenre}
           label="Genre"
           onChange={handleChange}
+          sx={{
+            color: "white",
+            backgroundColor: "#1e1e1e", // dark background
+            borderRadius: 1,
+            ".MuiOutlinedInput-notchedOutline": {
+              borderColor: "white",
+            },
+            "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#90caf9", // light blue on focus
+            },
+            "&:hover .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#90caf9",
+            },
+            "& .MuiSvgIcon-root": {
+              color: "white",
+            },
+          }}
+          MenuProps={{
+            PaperProps: {
+              sx: {
+                backgroundColor: "#2c2c2c", // dropdown menu bg
+                color: "white",             // dropdown text
+                "& .MuiMenuItem-root": {
+                  "&:hover": {
+                    backgroundColor: "#424242",
+                  },
+                },
+              },
+            },
+          }}
         >
           <MenuItem value="">All</MenuItem>
           {Object.entries(genreMap).map(([id, name]) => (
